@@ -3,6 +3,7 @@
 <style>
   body {
   	cursor: crosshair;
+    padding-left: 20px;
   }
   
   h1 {
@@ -15,12 +16,36 @@
     font-size: 30px;
     list-style: none;
     padding-left: 0;
+    position: absolute;
+    bottom: 0;
+  }
+  
+  li {
+    display: inline;
+    color: blue;
+  }
+  
+  .highlight {
+    color: black;
   }
   
   .highlight:hover {
     color: #FFFFFF;
-    background-color: #000000;
+    background-color: blue;
   }
+  
+  #about {
+		font-size: 50px;
+    padding-top: 15px;
+    padding-right: 25px;
+    float: right;
+  }
+  
+  .highlight:hover .dropdown-content {
+    display: block;
+  
+  }
+  
 </style>
 
 
@@ -29,10 +54,10 @@
 </head>
 
 <body>
-	<h1>my-homepage</h1>
+  <h1>my-homepage<span id="about">?</span></h1>
 	<ol>
     <li>(01) <span class="highlight">daily tasks</span></li>
     <li>(02) <span class="highlight">weekly schedule</span></li>
-    
+    <li>(03) <span class="highlight"> </span></li>
 	</ol>
 </body>
