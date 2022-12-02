@@ -74,27 +74,27 @@
 
 <body>
   <h1>my-homepage<span id="about">?</span></h1>
-  <div class="menu">
-		<ol>
-      <li>(01) <span onclick="openDropdown()" class="highlight">daily tasks</span></li>
-				<div class="dropdowncontent">
-					<img src="test.gif" alt="Cinque Terre" width="300" height="200">
-				</div>
-      <li>(02) <span class="highlight">weekly schedule</span></li>
-      <li>(03) <span class="highlight"> </span></li>
-		</ol>
-	</div>
+  
+  
+  
+<div class="menu">
+  <button>(01) <span onclick="myFunction()">daily tasks</span></button>
+</div>
+  
+<div id="myDIV">
+	This is my DIV element.
+</div>
+  
+  
   
 <script>
-    function openDropdown () {
-  		document.getElementByClassName(".menu").classList.toggle("show");
-  	}
- 		 const b = document.querySelector('.dropdowncontent')
-  		b.addEventListener('click', openDropdown)
+    function myFunction() {
+			let x = document.getElementById("myDIV");
+  			if (x.style.display === "none") {
+    x.style.display = "block";
+  	} else {
+    x.style.display = "none";
+  }
+}
 </script>
-  
-  
 </body>
-
-
-
