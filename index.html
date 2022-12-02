@@ -11,6 +11,13 @@
     font-size: 80px;
   }
   
+	#about {
+		font-size: 50px;
+    padding-top: 15px;
+    padding-right: 25px;
+    float: right;
+  }
+  
 	ol {
     font-family: helvetica, sans-serif;
     font-size: 30px;
@@ -25,6 +32,15 @@
     color: blue;
   }
   
+  .dropdown-content {
+    display: none;
+  	position: absolute;
+  }
+  
+  .highlight:hover span .dropdown-content {
+    display: block;
+  }
+  
   .highlight {
     color: black;
   }
@@ -33,18 +49,8 @@
     color: #FFFFFF;
     background-color: blue;
   }
-  
-  #about {
-		font-size: 50px;
-    padding-top: 15px;
-    padding-right: 25px;
-    float: right;
-  }
-  
-  .highlight:hover .dropdown-content {
-    display: block;
-  
-  }
+
+
   
 </style>
 
@@ -55,9 +61,14 @@
 
 <body>
   <h1>my-homepage<span id="about">?</span></h1>
-	<ol>
-    <li>(01) <span class="highlight">daily tasks</span></li>
-    <li>(02) <span class="highlight">weekly schedule</span></li>
-    <li>(03) <span class="highlight"> </span></li>
-	</ol>
+  <div class="menu">
+		<ol>
+      <li>(01) <span class="highlight">daily tasks</span></li>
+				<div class="dropdown-content">
+					<img src="test.gif" alt="Cinque Terre" width="300" height="200">
+				</div>
+      <li>(02) <span class="highlight">weekly schedule</span></li>
+      <li>(03) <span class="highlight"> </span></li>
+		</ol>
+	</div>
 </body>
