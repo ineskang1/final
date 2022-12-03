@@ -49,8 +49,16 @@
     color: #FFFFFF;
     background-color: blue;
   }
-
-
+  
+  #button1 {
+    background-color: white;
+  	border: none;
+  	text-align: center;
+  	text-decoration: none;
+  	display: inline-block;
+    font-family: helvetica, sans-serif;
+    font-size: 30px;
+}
   
 </style>
 
@@ -78,7 +86,7 @@
   
   
 <div class="menu">
-  <button>(01) <span onclick="myFunction()">daily tasks</span></button>
+  <button id="button1">(01) <span class="highlight" onclick="myFunction()">daily tasks</span></button>
 </div>
   
 <div id="myDIV">
