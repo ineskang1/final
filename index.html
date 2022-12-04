@@ -21,6 +21,11 @@
     bottom: 0;
   }
   
+  .entireabout {
+    display: inline-block;
+    border: 1px solid;
+  }
+  
 	.about {
     position: absolute;
 		font-size: 50px;
@@ -32,6 +37,7 @@
     
   .description {
     display: none;
+    position: absolute;
     font-size: 30px;
     text-align: center;
     border: 2px solid;
@@ -42,16 +48,13 @@
     bottom: 0;
     left: 0;
     right: 0;
-    position: absolute;
     margin: auto;
-    backdrop-filter: blur(10px);
   }
   
   .about:hover + .description {
     display: block;
   }
 
-  
   .highlight:hover span .dropdown-content {
     display: block;
   }
@@ -87,12 +90,12 @@
 </head>
 
 <body>
-  <h1>my-homepage</h1>
-  
-  <div class="about">
-    <h1>?</h1>
+  <div class="entireabout">
+		<h1>my-homepage</h1>
+		<div class="about">
+			<h1>?</h1>
+		</div>
   </div>
-
 	
   <div class="description"> 
 		This is my description!
