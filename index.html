@@ -11,30 +11,19 @@
     font-size: 80px;
   }
   
-	#about {
-		font-size: 50px;
-    padding-top: 15px;
-    padding-right: 25px;
-    float: right;
-  }
-  
-	ol {
+  .menu {
     font-family: helvetica, sans-serif;
     font-size: 30px;
-    list-style: none;
     padding-left: 0;
     position: absolute;
     bottom: 0;
   }
   
-  li {
-    display: inline;
-    color: blue;
-  }
-  
-  .dropdowncontent {
-    display: none;
-  	position: absolute;
+	#about {
+		font-size: 50px;
+    padding-top: 15px;
+    padding-right: 25px;
+    float: right;
   }
   
   .highlight:hover span .dropdown-content {
@@ -50,15 +39,16 @@
     background-color: blue;
   }
   
-  #button1 {
+  .button1 {
+    cursor: crosshair;
     background-color: white;
   	border: none;
-  	text-align: center;
-  	text-decoration: none;
   	display: inline-block;
     font-family: helvetica, sans-serif;
     font-size: 30px;
-}
+    color: blue;
+    padding: 0;
+  }
   
 </style>
 
@@ -67,42 +57,30 @@
   <title>homepage</title>
 </head>
 
-<!-- <body>
-  <h1>my-homepage<span id="about">?</span></h1>
-  <div class="menu">
-		<ol>
-      <li>(01) <span onclick="openDropdown()" class="highlight">daily tasks</span></li>
-				<div class="dropdowncontent">
-					<img src="test.gif" alt="Cinque Terre" width="300" height="200">
-				</div>
-      <li>(02) <span class="highlight">weekly schedule</span></li>
-      <li>(03) <span class="highlight"> </span></li>
-		</ol>
-	</div> -->
-
 <body>
   <h1>my-homepage<span id="about">?</span></h1>
+
   
-  
-  
-<div class="menu">
-  <button id="button1">(01) <span class="highlight" onclick="myFunction()">daily tasks</span></button>
-</div>
+	<div class="menu">
+		<button class="button1">(01) <span class="highlight" onclick="myFunction()">daily tasks</span></button>
+    <button class="button1">(02) <span class="highlight" onclick="myFunction()">daily tasks</span></button>
+	</div>
   
 <div id="myDIV">
-	This is my DIV element.
+		<img src="test.gif" alt="Cinque Terre" width="300" height="200">
 </div>
   
   
   
 <script>
-    function myFunction() {
-			let x = document.getElementById("myDIV");
-  			if (x.style.display === "none") {
-    x.style.display = "block";
-  	} else {
-    x.style.display = "none";
-  }
-}
+	function myFunction() {
+		let x = document.getElementById("myDIV");
+  		if (x.style.display === "none") {
+    		x.style.display = "block";
+  		} 
+      else {
+    		x.style.display = "none";
+  		}
+	}
 </script>
 </body>
