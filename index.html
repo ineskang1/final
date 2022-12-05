@@ -75,10 +75,12 @@
     padding: 0;
   }
 
-  #myDIV {
-    display: none;
+  .tabheaders {
+    font-weight: bold;
+    font-size: 20px;
+    padding: 4px;
+    cursor: move !important;
   }
-
   #dailytasks {
     display: none;
     position: absolute;
@@ -89,13 +91,6 @@
     width: 350px;
   }
 
-  #mydivheader {
-    font-weight: bold;
-    font-size: 20px;
-    padding: 4px;
-    cursor: move !important;
-  }
-
   #weeklytable {
     display: none;
     position: absolute;
@@ -103,13 +98,6 @@
     background-color: blue;
     width: 950px;
     padding-bottom: 25px;
-  }
-
-  #weeklytableheader {
-    font-weight: bold;
-    font-size: 20px;
-    padding: 4px;
-    cursor: move !important;
   }
   
 	table {
@@ -129,8 +117,26 @@
     color: white;
     background-color: blue;
   }
+  
+  #wintergoals {
+    display: none;
+    position: absolute;
+    top: 70%;
+    left: 60%;
+    background-color: blue;
+    color: white;
+    width: 350px;
+  }
 
-
+  #readinglist {
+    display: none;
+    position: absolute;
+    top: 60%;
+    left: 20%;
+    background-color: blue;
+    color: white;
+    width: 500px;
+  }
   
 </style>
 
@@ -151,13 +157,14 @@
   <div class="menu">
     <button class="button1">(01) <span class="highlight" onclick="DailyTasksFunction()">daily tasks</span></button>
     <button class="button1">(02) <span class="highlight" onclick="WeeklyScheduleFunction()">weekly schedule</span></button>
-    <button class="button1">(03) <span class="highlight" onclick="myFunction()">winter break goals</span></button>
-    <button class="button1">(04) <span class="highlight" onclick="myFunction()">reading list</span></button>
+    <button class="button1">(03) <span class="highlight" onclick="WinterGoalsFunction()">winter break goals</span></button>
+    <button class="button1">(04) <span class="highlight" onclick="ReadingFunction()">reading list</span></button>
     <button class="button1">(05) <span class="highlight" onclick="myFunction()">random inspo generator</span></button>
   </div>
 
+<!-- DAILY TASKS -->
   <div id="dailytasks">
-    <div id="mydivheader">daily-tasks</div>
+    <div id="dailytasksheader" class="tabheaders">daily-tasks</div>
     <form>
       <input type="checkbox" id="task1" checked="checked" class="checks"> <!-- class="checks" for if i want to eventually change the style of the checkboxes -->
       <label for="task1">Finish Internet Art Digital Gardens Final</label><br>
@@ -172,8 +179,9 @@
     </form>
   </div>
 
+<!-- WEEKLY SCHEDULE -->
   <div id="weeklytable">
-    <div id="weeklytableheader">weekly-schedule</div>
+    <div id="weeklytableheader" class="tabheaders">weekly-schedule</div>
     <table>
       <tr style="width:20%">
         <th>Mon</th>
@@ -199,24 +207,50 @@
     </table>
   </div>
 
-  <div id="winterbreak">
-    <div id="winterbreakheader">winter-break-goals</div>
+<!-- WINTER GOALS -->
+  <div id="wintergoals">
+    <div id="wintergoalsheader" class="tabheaders">winter-break-goals</div>
     <form>
       <input type="checkbox" id="goal1" class="checks"> <!-- class="checks" for if i want to eventually change the style of the checkboxes -->
-      <label for="goal1"></label><br>
+      <label for="goal1">update personal website</label><br>
       <input type="checkbox" id="goal2" class="checks">
-      <label for="goal2"> Surveillance Aesthetics: Build Greenhouse</label><br>
+      <label for="goal2">confirm winter quarter classes and schedule</label><br>
       <input type="checkbox" id="goal3" class="checks">
-      <label for="goal3"> deposit check on 53rd</label><br>
-      <input type="checkbox" id="goal4" checked="checked" class="checks">
-      <label for="goal4"> pick up packages</label><br>
+      <label for="goal3">find apartment options for next yr</label><br>
+      <input type="checkbox" id="goal4" class="checks">
+      <label for="goal4">book flight back to chicago (dec 3rd?)</label><br>
       <input type="checkbox" id="goal5" class="checks">
-      <label for="goal5"> HE customer service email</label><br>
+      <label for="goal5">design MAB merch</label><br>
+      <input type="checkbox" id="goal6" class="checks">
+      <label for="goal6">MAB winter show marketing</label><br>
+      <input type="checkbox" id="goal8" class="checks">
+      <label for="goal8">continue Qunnect4 assets + game design</label><br>
+      <input type="checkbox" id="goal7" class="checks">
+      <label for="goal7">read! (see reading list)</label><br>
     </form>
   </div>
-  <!-- JS -->
+  
+  <div id="readinglist">
+    <div id="readlistheader" class="tabheaders">reading-list</div>
+    <form>
+      <input type="checkbox" id="book1" class="checks"> <!-- class="checks" for if i want to eventually change the style of the checkboxes -->
+      <label for="book1">Notes From Underground - Fyodor Dostoyevsky</label><br>
+      <input type="checkbox" id="book2" class="checks">
+      <label for="book2">King Lear - Shakespeare</label><br>
+      <input type="checkbox" id="book3" class="checks">
+      <label for="book4">	In Praise of Shadows - Jun'ichirō Tanizaki </label><br>
+      <input type="checkbox" id="book5" class="checks">
+      <label for="book5">Stoner - John Williams</label><br>
+    </form>
+  </div>
+  
+  
+
+<!-- javascript -->
 
   <script>
+    
+//STICKIES APPEAR ON CLICK//
     function DailyTasksFunction() {
       let x = document.getElementById("dailytasks");
       if (x.style.display === "none") {
@@ -234,8 +268,27 @@
         x.style.display = "none";
       }
     }
+    
+    function WinterGoalsFunction() {
+      let x = document.getElementById("wintergoals");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
 
-    //MOVE ELEMENTS//
+    function ReadingFunction() {
+      let x = document.getElementById("readinglist");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+    
+    
+//MOVE DAILY TASKS//
     dragElement(document.getElementById("dailytasks"));
 
     function dragElement(elmnt) {
@@ -284,7 +337,7 @@
     
 
 
-    //MOVE ELEMENTS//
+//MOVE WEEKLY TABLE//
     
     dragElement(document.getElementById("weeklytable"));
 
@@ -331,6 +384,102 @@
         document.onmousemove = null;
       }
     }
+
     
+//MOVE WINTER GOALS TABLE//
+    
+    dragElement(document.getElementById("wintergoals"));
+
+    function dragElement(elmnt) {
+      var pos1 = 0,
+        pos2 = 0,
+        pos3 = 0,
+        pos4 = 0;
+      if (document.getElementById(elmnt.id + "header")) {
+        /* if present, the header is where you move the DIV from:*/
+        document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+      } else {
+        /* otherwise, move the DIV from anywhere inside the DIV:*/
+        elmnt.onmousedown = dragMouseDown;
+      }
+
+      function dragMouseDown(e) {
+        e = e || window.event;
+        e.preventDefault();
+        // get the mouse cursor position at startup:
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        document.onmouseup = closeDragElement;
+        // call a function whenever the cursor moves:
+        document.onmousemove = elementDrag;
+      }
+
+      function elementDrag(e) {
+        e = e || window.event;
+        e.preventDefault();
+        // calculate the new cursor position:
+        pos1 = pos3 - e.clientX;
+        pos2 = pos4 - e.clientY;
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        // set the element's new position:
+        elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+        elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+      }
+
+      function closeDragElement() {
+        /* stop moving when mouse button is released:*/
+        document.onmouseup = null;
+        document.onmousemove = null;
+      }
+    }
+    
+//MOVE READING LIST//
+    
+    dragElement(document.getElementById("readinglist"));
+
+    function dragElement(elmnt) {
+      var pos1 = 0,
+        pos2 = 0,
+        pos3 = 0,
+        pos4 = 0;
+      if (document.getElementById(elmnt.id + "header")) {
+        /* if present, the header is where you move the DIV from:*/
+        document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+      } else {
+        /* otherwise, move the DIV from anywhere inside the DIV:*/
+        elmnt.onmousedown = dragMouseDown;
+      }
+
+      function dragMouseDown(e) {
+        e = e || window.event;
+        e.preventDefault();
+        // get the mouse cursor position at startup:
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        document.onmouseup = closeDragElement;
+        // call a function whenever the cursor moves:
+        document.onmousemove = elementDrag;
+      }
+
+      function elementDrag(e) {
+        e = e || window.event;
+        e.preventDefault();
+        // calculate the new cursor position:
+        pos1 = pos3 - e.clientX;
+        pos2 = pos4 - e.clientY;
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        // set the element's new position:
+        elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+        elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+      }
+
+      function closeDragElement() {
+        /* stop moving when mouse button is released:*/
+        document.onmouseup = null;
+        document.onmousemove = null;
+      }
+    }
   </script>
 </body>
